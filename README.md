@@ -19,7 +19,7 @@
 ## Visão geral do projeto
 
 <div align="center">
-  <img src="github/images/home.png" alt="home">  
+  <img src="github/images/code-example.png" alt="code example">  
 </div>
 
 ## Sobre o projeto
@@ -53,11 +53,8 @@ Instruções de instalação do projeto em seu computador.
 Instalações necessárias antes de executar o projeto.
 
 1. Node
-   
 2. Yarn
-   
 3. Git
-   
 4. Docker / Docker Compose
   
 ### Instalação
