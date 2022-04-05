@@ -1,0 +1,13 @@
+classroom/dist
+classroom/node_modules
+classroom/.env
+
+purchases/dist
+purchases/node_modules
+purchases/.env
+
+web/node_modules
+web/.env.local
+web/.env.development.local
+web/.env.test.local
+web/.env.production.local
