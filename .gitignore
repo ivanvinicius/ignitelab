@@ -1,12 +1,17 @@
 classroom/dist
 classroom/node_modules
 classroom/.env
+classroom/yarn-error.log
 
 purchases/dist
 purchases/node_modules
 purchases/.env
+purchases/yarn-error.log
 
 web/node_modules
+web/.next
+web/out
+web/.vercel
 web/.env.local
 web/.env.development.local
 web/.env.test.local
