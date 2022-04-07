@@ -5,6 +5,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import path from 'path';
 
 import { DatabaseModule } from '../database/database.module';
+// Injetando Kafka aqui, para que a criação da purchase tenha acesso aos ferramentais do Kafka
+import { MessagingModule } from '../messaging/messaging.module';
 
 import { ProductsResolver } from './graphql/resolvers/products.resolver';
 import { PurchaseResolver } from './graphql/resolvers/purchase.resolver';
@@ -17,11 +19,14 @@ import { CustomersService } from '../services/customers.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    DatabaseModule,
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       autoSchemaFile: path.resolve(process.cwd(), 'src/schema.gql'),
     }),
+    DatabaseModule,
+
+    //kafka
+    MessagingModule,
   ],
   providers: [
     //resolvers

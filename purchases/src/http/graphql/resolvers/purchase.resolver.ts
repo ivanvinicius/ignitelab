@@ -43,7 +43,8 @@ export class PurchaseResolver {
   @Mutation(() => Purchase)
   async createPurchase(
     @Args('data') data: CreatePurchaseInput,
-    @CurrentUser() user: AuthUser, //Criando próprio decorator para pegar o user do jwt
+    //Criando próprio decorator para pegar o user do jwt
+    @CurrentUser() user: AuthUser,
   ) {
     let customer = await this.customersService.getCustomerByAuthUserId(
       user.sub,

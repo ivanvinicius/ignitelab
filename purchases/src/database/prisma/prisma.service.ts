@@ -7,10 +7,7 @@ import {
 import { PrismaClient } from '@prisma/client';
 
 @Injectable()
-export class PrismaService
-  extends PrismaClient
-  implements OnModuleInit, OnModuleDestroy
-{
+export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy { //eslint-disable-line
   constructor() {
     super();
   }

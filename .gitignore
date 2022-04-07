@@ -10,6 +10,8 @@ purchases/yarn-error.log
 
 web/node_modules
 web/.next
+web/.next/
+web/.next/cache
 web/out
 web/.vercel
 web/.env.local

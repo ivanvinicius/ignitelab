@@ -22,14 +22,12 @@ export default function MyHome() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = withPageAuthRequired()
+export const getServerSideProps: GetServerSideProps = withPageAuthRequired({
+  getServerSideProps: async ({ req, res }) => {
+    console.log(getAccessToken(req, res))
 
-// export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-//   const { accessToken } = await getAccessToken(req, res)
-
-//   console.log('TOKEN: ', `Bearer ${accessToken}`)
-
-//   return {
-//     props: {}
-//   }
-// }
+    return {
+      props: {}
+    }
+  }
+})
