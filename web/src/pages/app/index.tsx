@@ -5,14 +5,28 @@ import {
 } from '@auth0/nextjs-auth0'
 import { GetServerSideProps } from 'next'
 
-export default function MyHome() {
+import { WithApollo } from '../../lib/withApollo'
+import {
+  getServerPageGetProducts,
+  ssrGetProducts
+} from '../../graphql/generated/page'
+import { useMeQuery } from '../../graphql/generated/graphql'
+
+function MyHome({ data }) {
   const { user } = useUser()
+  const { data: me } = useMeQuery()
+  // const { data, loading, error } = useGetProductsQuery()
 
   return (
     <div>
+      <h2>Auth0 useUser</h2>
       <pre>{JSON.stringify(user, null, 2)}</pre>
-      <h1>Hello</h1>
 
+      <h2>useMeQuery</h2>
+      <pre>{JSON.stringify(me, null, 2)}</pre>
+
+      <h2>getServerPageGetProducts</h2>
+      <pre>{JSON.stringify(data?.products, null, 2)}</pre>
       {/*
         Não é possível limpar cookies server-side através do navegador, para isso
         chamamos a rota logout, onde a mesma se encarrega de fazer a limpeza.
@@ -23,11 +37,15 @@ export default function MyHome() {
 }
 
 export const getServerSideProps: GetServerSideProps = withPageAuthRequired({
-  getServerSideProps: async ({ req, res }) => {
-    console.log(getAccessToken(req, res))
+  getServerSideProps: async (context) => {
+    console.log(getAccessToken(context.req, context.res))
+
+    const query = () => getServerPageGetProducts(undefined, context)
 
     return {
-      props: {}
+      props: { ...query }
     }
   }
 })
+
+export default WithApollo(ssrGetProducts.withPage()(MyHome))
