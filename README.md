@@ -43,6 +43,8 @@ As principais tecnologias utilizadas na construção deste projeto foram:
 * [Auth0](https://auth0.com/)
 * [JWT](https://jwt.io/)
 * [Next.js](https://nextjs.org/)
+* [Tailwind CSS](https://tailwindui.com/)
+* [Codegen](https://www.graphql-code-generator.com/)
 
 ## Instalação e utilização
 
@@ -67,7 +69,7 @@ Também é necessário verificar se os 3 containers inciaram de forma correta, m
 container do apache kafka não incia, pois depende da inicialização do zookeeper.
 
 3. Para baixar as dependências do projeto, você deve acessar as pastas    
-`classroom`, `purchases` e `web`, rodando o comando `$ yarn` dentro das mesmas.
+`classroom`, `purchases`, `gateway` e `web`, rodando o comando `$ yarn` dentro das mesmas.
 
 4. Dentro da pasta `classroom` e `purchases`, rode o comando `$ yarn prisma migrate dev`,
 para rodar as migrations no banco de dados do docker.
@@ -76,11 +78,12 @@ para rodar as migrations no banco de dados do docker.
 necessárias para a execução do projeto.
 
 6. Para inciar os projetos em modo development execute:
-  6.1. `purchases`: `$ yarn dev:purchases` -> iniciado na porta: 3333
-  6.2. `classroom`: `$ yarn dev:classroom` -> iniciado na porta: 3334
-  6.3. `web`: `$ yarn dev` -> iniciado na porta: 3000
+  6.1. `classroom`: `$ yarn dev:classroom` -> iniciado na porta: 3334
+  6.2. `purchases`: `$ yarn dev:purchases` -> iniciado na porta: 3333
+  6.3. `gateway`: `$ yarn dev:gateway` -> iniciado na porta: 3332
+  6.5. `web`: `$ yarn dev:web` -> iniciado na porta: 3000
 
-7. Para acessar a aba do GraphQL, basta abrir o navegador e digitar `http://localhost:3333(4)/graphql`
+7. Para acessar a aba do GraphQL, basta abrir o navegador e digitar `http://localhost:3332(3/4)/graphql`
 
 8. Para acessar o Prima Studio, basta rodar o comando `$ yarn prisma studio` e abrir
 o navegador na porta `http://localhost:5555`

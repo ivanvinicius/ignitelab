@@ -30,9 +30,11 @@ export class PurchasesController {
 
   @EventPattern('purchases.new-purchase')
   async purchaseCreated(@Payload('value') payload: PurchaseCreatedPayload) {
-    let student = await this.studentsService.getStudentById(
+    let student = await this.studentsService.getStudentByAuthUserId(
       payload.customer.authUserId,
     );
+
+    console.log('STUDENT', student);
 
     if (!student) {
       student = await this.studentsService.createStudent({
