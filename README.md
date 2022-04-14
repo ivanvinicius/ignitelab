@@ -12,14 +12,12 @@
     <li><a href="#sobre-o-projeto">Sobre o projeto</a></li>
     <li><a href="#tecnologias-utilizadas">Tecnologias utilizadas</a></li>
     <li><a href="#instalação-e-utilização">Instalação e utilização</a></li>
-    <li><a href="#licença">Licença</a></li>
-    <li><a href="#agradecimentos">Agradecimentos</a></li>
   </ol>
 
 ## Visão geral do projeto
 
 <div align="center">
-  <img src="github/images/code-example.png" alt="code example">  
+  <img src="github/images/ignitelab-home.png" alt="home">  
 </div>
 
 ## Sobre o projeto
@@ -39,7 +37,7 @@ As principais tecnologias utilizadas na construção deste projeto foram:
 * [Prisma](https://www.prisma.io/)
 * [NestJS](https://docs.nestjs.com/)
 * [GraphQL](https://graphql.org/)
-* [Apollo Client (GraphQL](https://www.apollographql.com/docs/react/)
+* [Apollo Client (GraphQL)](https://www.apollographql.com/docs/react/)
 * [Auth0](https://auth0.com/)
 * [JWT](https://jwt.io/)
 * [Next.js](https://nextjs.org/)
@@ -88,14 +86,8 @@ necessárias para a execução do projeto.
 8. Para acessar o Prima Studio, basta rodar o comando `$ yarn prisma studio` e abrir
 o navegador na porta `http://localhost:5555`
 
-## Licença
 
- O projeto ainda não contém nenhuma licença. ⚠️
-
-## Agradecimentos
-
-* [Rocketseat Education - Boosting People.](https://www.rocketseat.com.br/)
-
+<br/>
 <br/>
 <h4 align="center"><a href="#top">Voltar ao Início</a></h4>
 
